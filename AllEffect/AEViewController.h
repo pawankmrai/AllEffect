@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iCarousel.h"
+#import "AECameraViewController.h"
 
-@interface AEViewController : UIViewController
+@interface AEViewController : UIViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate, UIPopoverControllerDelegate,UIActionSheetDelegate, iCarouselDataSource, iCarouselDelegate, AECameraViewControllerDelegate>
 
+
+//-(IBAction)pickImage:(id)sender;
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06945E8216D6412B003E13AA /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8116D6412B003E13AA /* iCarousel.m */; };
+		06945E8916D64305003E13AA /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8416D64305003E13AA /* UIImage+Alpha.m */; };
+		06945E8A16D64305003E13AA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8616D64305003E13AA /* UIImage+Resize.m */; };
+		06945E8B16D64305003E13AA /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8816D64305003E13AA /* UIImage+RoundedCorner.m */; };
+		06945E8F16D64916003E13AA /* AECameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8E16D64916003E13AA /* AECameraViewController.m */; };
 		069FC14C16D1F4E9007B34CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC14B16D1F4E9007B34CE /* UIKit.framework */; };
 		069FC14E16D1F4E9007B34CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC14D16D1F4E9007B34CE /* Foundation.framework */; };
 		069FC15016D1F4E9007B34CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC14F16D1F4E9007B34CE /* CoreGraphics.framework */; };
@@ -19,9 +24,43 @@
 		069FC16516D1F4E9007B34CE /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069FC16316D1F4E9007B34CE /* MainStoryboard_iPhone.storyboard */; };
 		069FC16816D1F4E9007B34CE /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069FC16616D1F4E9007B34CE /* MainStoryboard_iPad.storyboard */; };
 		069FC16B16D1F4E9007B34CE /* AEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069FC16A16D1F4E9007B34CE /* AEViewController.m */; };
+		069FC17416D1F57E007B34CE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC17316D1F57E007B34CE /* CoreMedia.framework */; };
+		069FC17616D1F596007B34CE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC17516D1F596007B34CE /* CoreVideo.framework */; };
+		069FC17816D1F59D007B34CE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC17716D1F59D007B34CE /* OpenGLES.framework */; };
+		069FC17A16D1F5A7007B34CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC17916D1F5A7007B34CE /* AVFoundation.framework */; };
+		069FC17C16D1F5B2007B34CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC17B16D1F5B2007B34CE /* QuartzCore.framework */; };
+		069FC18716D1F678007B34CE /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC18416D1F606007B34CE /* libGPUImage.a */; };
+		069FC18B16D1FF13007B34CE /* AEEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069FC18A16D1FF13007B34CE /* AEEditViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		069FC18316D1F606007B34CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 069FC17D16D1F606007B34CE /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		069FC18516D1F606007B34CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 069FC17D16D1F606007B34CE /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		06945E8016D6412B003E13AA /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		06945E8116D6412B003E13AA /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		06945E8316D64305003E13AA /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		06945E8416D64305003E13AA /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		06945E8516D64305003E13AA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		06945E8616D64305003E13AA /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		06945E8716D64305003E13AA /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		06945E8816D64305003E13AA /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		06945E8D16D64916003E13AA /* AECameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECameraViewController.h; sourceTree = "<group>"; };
+		06945E8E16D64916003E13AA /* AECameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AECameraViewController.m; sourceTree = "<group>"; };
 		069FC14816D1F4E9007B34CE /* AllEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069FC14B16D1F4E9007B34CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		069FC14D16D1F4E9007B34CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -30,8 +69,8 @@
 		069FC15516D1F4E9007B34CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		069FC15716D1F4E9007B34CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		069FC15916D1F4E9007B34CE /* AllEffect-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AllEffect-Prefix.pch"; sourceTree = "<group>"; };
-		069FC15A16D1F4E9007B34CE /* AEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEAppDelegate.h; sourceTree = "<group>"; };
-		069FC15B16D1F4E9007B34CE /* AEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEAppDelegate.m; sourceTree = "<group>"; };
+		069FC15A16D1F4E9007B34CE /* AEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AEAppDelegate.h; path = AllEffect/AEAppDelegate.h; sourceTree = "<group>"; };
+		069FC15B16D1F4E9007B34CE /* AEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AEAppDelegate.m; path = AllEffect/AEAppDelegate.m; sourceTree = "<group>"; };
 		069FC15D16D1F4E9007B34CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		069FC15F16D1F4E9007B34CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		069FC16116D1F4E9007B34CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -39,6 +78,14 @@
 		069FC16716D1F4E9007B34CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		069FC16916D1F4E9007B34CE /* AEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AEViewController.h; sourceTree = "<group>"; };
 		069FC16A16D1F4E9007B34CE /* AEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AEViewController.m; sourceTree = "<group>"; };
+		069FC17316D1F57E007B34CE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		069FC17516D1F596007B34CE /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		069FC17716D1F59D007B34CE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		069FC17916D1F5A7007B34CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		069FC17B16D1F5B2007B34CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		069FC17D16D1F606007B34CE /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		069FC18916D1FF13007B34CE /* AEEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEEditViewController.h; sourceTree = "<group>"; };
+		069FC18A16D1FF13007B34CE /* AEEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +93,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069FC18716D1F678007B34CE /* libGPUImage.a in Frameworks */,
+				069FC17C16D1F5B2007B34CE /* QuartzCore.framework in Frameworks */,
+				069FC17A16D1F5A7007B34CE /* AVFoundation.framework in Frameworks */,
+				069FC17816D1F59D007B34CE /* OpenGLES.framework in Frameworks */,
+				069FC17616D1F596007B34CE /* CoreVideo.framework in Frameworks */,
+				069FC17416D1F57E007B34CE /* CoreMedia.framework in Frameworks */,
 				069FC14C16D1F4E9007B34CE /* UIKit.framework in Frameworks */,
 				069FC14E16D1F4E9007B34CE /* Foundation.framework in Frameworks */,
 				069FC15016D1F4E9007B34CE /* CoreGraphics.framework in Frameworks */,
@@ -55,9 +108,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06945E7F16D64104003E13AA /* Carousel + imageResize */ = {
+			isa = PBXGroup;
+			children = (
+				06945E8316D64305003E13AA /* UIImage+Alpha.h */,
+				06945E8416D64305003E13AA /* UIImage+Alpha.m */,
+				06945E8516D64305003E13AA /* UIImage+Resize.h */,
+				06945E8616D64305003E13AA /* UIImage+Resize.m */,
+				06945E8716D64305003E13AA /* UIImage+RoundedCorner.h */,
+				06945E8816D64305003E13AA /* UIImage+RoundedCorner.m */,
+				06945E8016D6412B003E13AA /* iCarousel.h */,
+				06945E8116D6412B003E13AA /* iCarousel.m */,
+			);
+			name = "Carousel + imageResize";
+			sourceTree = "<group>";
+		};
+		06945E8C16D648EF003E13AA /* Still Camera */ = {
+			isa = PBXGroup;
+			children = (
+				06945E8D16D64916003E13AA /* AECameraViewController.h */,
+				06945E8E16D64916003E13AA /* AECameraViewController.m */,
+			);
+			name = "Still Camera";
+			sourceTree = "<group>";
+		};
 		069FC13F16D1F4E9007B34CE = {
 			isa = PBXGroup;
 			children = (
+				06945E7F16D64104003E13AA /* Carousel + imageResize */,
+				069FC17116D1F4F1007B34CE /* User Interface */,
 				069FC15116D1F4E9007B34CE /* AllEffect */,
 				069FC14A16D1F4E9007B34CE /* Frameworks */,
 				069FC14916D1F4E9007B34CE /* Products */,
@@ -75,6 +154,12 @@
 		069FC14A16D1F4E9007B34CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				069FC17D16D1F606007B34CE /* GPUImage.xcodeproj */,
+				069FC17B16D1F5B2007B34CE /* QuartzCore.framework */,
+				069FC17916D1F5A7007B34CE /* AVFoundation.framework */,
+				069FC17716D1F59D007B34CE /* OpenGLES.framework */,
+				069FC17516D1F596007B34CE /* CoreVideo.framework */,
+				069FC17316D1F57E007B34CE /* CoreMedia.framework */,
 				069FC14B16D1F4E9007B34CE /* UIKit.framework */,
 				069FC14D16D1F4E9007B34CE /* Foundation.framework */,
 				069FC14F16D1F4E9007B34CE /* CoreGraphics.framework */,
@@ -85,12 +170,9 @@
 		069FC15116D1F4E9007B34CE /* AllEffect */ = {
 			isa = PBXGroup;
 			children = (
-				069FC15A16D1F4E9007B34CE /* AEAppDelegate.h */,
-				069FC15B16D1F4E9007B34CE /* AEAppDelegate.m */,
-				069FC16316D1F4E9007B34CE /* MainStoryboard_iPhone.storyboard */,
-				069FC16616D1F4E9007B34CE /* MainStoryboard_iPad.storyboard */,
-				069FC16916D1F4E9007B34CE /* AEViewController.h */,
-				069FC16A16D1F4E9007B34CE /* AEViewController.m */,
+				06945E8C16D648EF003E13AA /* Still Camera */,
+				069FC17216D1F505007B34CE /* Home */,
+				069FC18816D1FEE7007B34CE /* Edit Page */,
 				069FC15216D1F4E9007B34CE /* Supporting Files */,
 			);
 			path = AllEffect;
@@ -108,6 +190,44 @@
 				069FC16116D1F4E9007B34CE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		069FC17116D1F4F1007B34CE /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				069FC16316D1F4E9007B34CE /* MainStoryboard_iPhone.storyboard */,
+				069FC16616D1F4E9007B34CE /* MainStoryboard_iPad.storyboard */,
+				069FC15A16D1F4E9007B34CE /* AEAppDelegate.h */,
+				069FC15B16D1F4E9007B34CE /* AEAppDelegate.m */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		069FC17216D1F505007B34CE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				069FC16916D1F4E9007B34CE /* AEViewController.h */,
+				069FC16A16D1F4E9007B34CE /* AEViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		069FC17E16D1F606007B34CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				069FC18416D1F606007B34CE /* libGPUImage.a */,
+				069FC18616D1F606007B34CE /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		069FC18816D1FEE7007B34CE /* Edit Page */ = {
+			isa = PBXGroup;
+			children = (
+				069FC18916D1FF13007B34CE /* AEEditViewController.h */,
+				069FC18A16D1FF13007B34CE /* AEEditViewController.m */,
+			);
+			name = "Edit Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,12 +270,35 @@
 			mainGroup = 069FC13F16D1F4E9007B34CE;
 			productRefGroup = 069FC14916D1F4E9007B34CE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 069FC17E16D1F606007B34CE /* Products */;
+					ProjectRef = 069FC17D16D1F606007B34CE /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				069FC14716D1F4E9007B34CE /* AllEffect */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		069FC18416D1F606007B34CE /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 069FC18316D1F606007B34CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		069FC18616D1F606007B34CE /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = 069FC18516D1F606007B34CE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		069FC14616D1F4E9007B34CE /* Resources */ = {
@@ -181,6 +324,12 @@
 				069FC15816D1F4E9007B34CE /* main.m in Sources */,
 				069FC15C16D1F4E9007B34CE /* AEAppDelegate.m in Sources */,
 				069FC16B16D1F4E9007B34CE /* AEViewController.m in Sources */,
+				069FC18B16D1FF13007B34CE /* AEEditViewController.m in Sources */,
+				06945E8216D6412B003E13AA /* iCarousel.m in Sources */,
+				06945E8916D64305003E13AA /* UIImage+Alpha.m in Sources */,
+				06945E8A16D64305003E13AA /* UIImage+Resize.m in Sources */,
+				06945E8B16D64305003E13AA /* UIImage+RoundedCorner.m in Sources */,
+				06945E8F16D64916003E13AA /* AECameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +350,7 @@
 				069FC16416D1F4E9007B34CE /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
+			path = AllEffect;
 			sourceTree = "<group>";
 		};
 		069FC16616D1F4E9007B34CE /* MainStoryboard_iPad.storyboard */ = {
@@ -209,6 +359,7 @@
 				069FC16716D1F4E9007B34CE /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			path = AllEffect;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,7 +428,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AllEffect/AllEffect-Prefix.pch";
+				HEADER_SEARCH_PATHS = "/Users/sandeepnasa/Pawan/GPUImage/framework/../**";
 				INFOPLIST_FILE = "AllEffect/AllEffect-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -288,7 +441,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AllEffect/AllEffect-Prefix.pch";
+				HEADER_SEARCH_PATHS = "/Users/sandeepnasa/Pawan/GPUImage/framework/../**";
 				INFOPLIST_FILE = "AllEffect/AllEffect-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -313,6 +468,7 @@
 				069FC17016D1F4E9007B34CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
