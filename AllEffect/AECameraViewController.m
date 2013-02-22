@@ -8,6 +8,8 @@
 
 #import "AECameraViewController.h"
 #import "GPUImage.h"
+#import "AEDataClass.h"
+#import "AECustomView.h"
 
 @interface AECameraViewController () <UIActionSheetDelegate>
 {
@@ -15,12 +17,14 @@
     GPUImageStillCamera *stillCamera;
     GPUImageFilter *filter;
 }
+@property (strong, nonatomic) IBOutlet UIScrollView *favScrollView;
 -(IBAction)captureImage:(id)sender;
 
 @end
 
 @implementation AECameraViewController
 @synthesize delegate;
+@synthesize favScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     // Setup initial camera filter
     filter = [[GPUImageFilter alloc] init];
@@ -46,62 +51,73 @@
     [stillCamera addTarget:filter];
     // Begin showing video camera stream
     [stillCamera startCameraCapture];
+
     
-    // Add Filter Button to Interface
-    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(applyImageFilter:)];
-    self.navigationItem.rightBarButtonItem = filterButton;
+    //////////////////selected filter///////
+   /*
+    NSMutableArray *effectArray=[[NSMutableArray alloc] init];
+    [effectArray addObject:[[GPUImageFilter alloc] init]];
+    [effectArray addObject:[[GPUImageGrayscaleFilter alloc] init]];
+    [effectArray addObject:[[GPUImageSepiaFilter alloc] init]];
+    */
+   
+    NSMutableArray *effectArray=[[NSMutableArray alloc] init];
+    
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImageFilter alloc] init] withName:@"Original"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImageGrayscaleFilter alloc] init] withName:@"Gray Scale"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImageSepiaFilter alloc] init] withName:@"Sepia"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImageSketchFilter alloc] init] withName:@"Sketch"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImagePixellateFilter alloc] init] withName:@"Pixellate"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImageColorInvertFilter alloc] init] withName:@"Color Invert"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImageToonFilter alloc] init] withName:@"Toon"]];
+    [effectArray addObject:[AEDataClass liveFilter:[[GPUImagePinchDistortionFilter alloc] init] withName:@"Distort"]];
+    
+    
+    [self createScrollFilter:self.favScrollView withData:effectArray];
 }
-- (IBAction)applyImageFilter:(id)sender
-{
-    UIActionSheet *filterActionSheet = [[UIActionSheet alloc] initWithTitle:@"Select Filter"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"Cancel"
-                                                     destructiveButtonTitle:nil
-                                                          otherButtonTitles:@"Grayscale", @"Sepia", @"Sketch", @"Pixellate", @"Color Invert", @"Toon", @"Pinch Distort", @"None", nil];
-    [filterActionSheet showFromBarButtonItem:sender animated:YES];
+-(void)createScrollFilter:(UIScrollView *)scrollView withData:effectArray{
+
+    float x=scrollView.frame.origin.x;
+    NSString *deviceModel=[UIDevice currentDevice].model;
+    CGRect frame=CGRectZero;
+    
+    for (int i=0; i<[effectArray count]; i++) {
+        
+        AEDataClass *data=nil;
+        
+        data=(AEDataClass *)[effectArray objectAtIndex:i];
+        GPUImageFilter *favFilter=[data filter];
+        
+         AECustomView *favImageView=[[AECustomView alloc] init];
+         [favImageView setBackgroundColor:[UIColor lightGrayColor]];
+        
+         if ([deviceModel isEqualToString:@"iPad Simulator"]) {
+        
+            frame =CGRectMake(x+2, 2,150, 62);
+        
+            }
+            else{
+                frame=CGRectMake(x+2, 2, 150, 64);
+        
+          }
+         [favImageView setFrame:frame];
+
+        [favFilter addTarget:favImageView];
+        // Create custom GPUImage camera
+        GPUImageStillCamera  *favStillCamera = [[GPUImageStillCamera alloc] init];
+        favStillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+        [favStillCamera addTarget:favFilter];
+        // Begin showing video camera stream
+        [favStillCamera startCameraCapture];
+
+        [scrollView addSubview:favImageView];
+        x+=160;
+        [scrollView setContentSize:CGSizeMake(x, 40)];
+    }
 }
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    // Bail if the cancel button was tapped
-    if(actionSheet.cancelButtonIndex == buttonIndex)
-    {
-        return;
-    }
-    GPUImageFilter *selectedFilter;
-    [stillCamera removeAllTargets];
-    [filter removeAllTargets];
-    switch (buttonIndex) {
-        case 0:
-            selectedFilter = [[GPUImageGrayscaleFilter alloc] init];
-            break;
-        case 1:
-            selectedFilter = [[GPUImageSepiaFilter alloc] init];
-            break;
-        case 2:
-            selectedFilter = [[GPUImageSketchFilter alloc] init];
-            break;
-        case 3:
-            selectedFilter = [[GPUImagePixellateFilter alloc] init];
-            break;
-        case 4:
-            selectedFilter = [[GPUImageColorInvertFilter alloc] init];
-            break;
-        case 5:
-            selectedFilter = [[GPUImageToonFilter alloc] init];
-            break;
-        case 6:
-            selectedFilter = [[GPUImagePinchDistortionFilter alloc] init];
-            break;
-        case 7:
-            selectedFilter = [[GPUImageFilter alloc] init];
-            break;
-        default:
-            break;
-    }
-    filter = selectedFilter;
-    GPUImageView *filterView = (GPUImageView *)self.view;
-    [filter addTarget:filterView];
-    [stillCamera addTarget:filter];
+-(void)showCollectionView:(id)sender{
+
+    [self performSegueWithIdentifier:@"loadFilterOptions" sender:sender];
 }
 -(IBAction)captureImage:(id)sender{
 
@@ -131,4 +147,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setFavScrollView:nil];
+    [super viewDidUnload];
+}
 @end
