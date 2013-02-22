@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="OJY-6U-6pK">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="OJY-6U-6pK">
                                 <rect key="frame" x="0.0" y="395" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -114,38 +114,6 @@
             <point key="canvasLocation" x="427" y="6"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AECameraViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AECameraViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="applyImageFilter:"/>
-                <relationship kind="action" name="captureImage:"/>
-            </relationships>
-        </class>
-        <class className="AEViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AEViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="applyImageFilter:"/>
-                <relationship kind="action" name="photoFromAlbum:"/>
-                <relationship kind="action" name="photoFromCamera:"/>
-                <relationship kind="action" name="saveImageToAlbum:"/>
-                <relationship kind="outlet" name="filterButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="photoCarousel" candidateClass="iCarousel"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="GPUImageView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GPUImageView.h"/>
-        </class>
-        <class className="iCarousel" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
