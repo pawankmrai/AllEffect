@@ -85,7 +85,7 @@
     ((UIImageView *)view).image = [[displayImages objectAtIndex:index] resizedImage:targetSize interpolationQuality:kCGInterpolationHigh];
     // Two finger double-tap will delete an image
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeImageFromCarousel:)];
-    gesture.numberOfTouchesRequired = 2;
+    gesture.numberOfTouchesRequired = 1;
     gesture.numberOfTapsRequired = 2;
     view.gestureRecognizers = [NSArray arrayWithObject:gesture];
     return view;
@@ -93,8 +93,24 @@
 - (void)removeImageFromCarousel:(UIGestureRecognizer *)gesture
 {
     [gesture removeTarget:self action:@selector(removeImageFromCarousel:)];
-    [displayImages removeObjectAtIndex:self.photoCarousel.currentItemIndex];
-    [self.photoCarousel reloadData];
+    [UIView animateWithDuration:0.9
+                          delay:1.0f
+                        options: UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         
+                          CGRect frame=CGRectMake(320, 480, 10, 10);
+                          [self.photoCarousel.currentItemView setFrame:frame];
+                     }
+                     completion:^(BOOL finished){
+                         [displayImages removeObjectAtIndex:self.photoCarousel.currentItemIndex];
+                         [self.photoCarousel reloadData];
+                         
+                     }];
+    
+    [UIView commitAnimations];
+
+    
+    
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad
@@ -107,13 +123,30 @@
 }
 - (IBAction)applyImageFilter:(id)sender
 {
-    UIActionSheet *filterActionSheet = [[UIActionSheet alloc] initWithTitle:@"Select Filter"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"Cancel"
-                                                     destructiveButtonTitle:nil
-                                                          otherButtonTitles:@"Grayscale", @"Sepia", @"Sketch", @"Pixellate", @"Color Invert", @"Toon", @"Pinch Distort", @"None", nil];
+    if ([displayImages count]<1) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Waring"
+                                                        message:@"No Image to apply filter"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.saveButton.enabled=NO;
+        self.filterButton.enabled=NO;
+        
+    }
+    else{
+        
+        UIActionSheet *filterActionSheet = [[UIActionSheet alloc] initWithTitle:@"Select Filter"
+                                                                       delegate:self
+                                                              cancelButtonTitle:@"Cancel"
+                                                         destructiveButtonTitle:nil
+                                                              otherButtonTitles:@"Grayscale", @"Sepia", @"Sketch", @"Pixellate", @"Color Invert", @"Toon", @"Pinch Distort", @"None", nil];
+        
+        [filterActionSheet showFromToolbar:self.toolBar];
+        
+    }
     
-    [filterActionSheet showFromToolbar:self.toolBar];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -156,9 +189,11 @@
 }
 -(IBAction)photoFromAlbum:(id)sender{
 
+        
     UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
     photoPicker.delegate = self;
     photoPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
     [self presentViewController:photoPicker animated:YES completion:NULL];
     
 }
@@ -180,9 +215,24 @@
     [photoPicker dismissViewControllerAnimated:YES completion:NULL];
 }
 -(IBAction)saveImageToAlbum:(id)sender{
+    
+    if ([displayImages count]<1) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Waring"
+                                                        message:@"No Image to save"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.saveButton.enabled=NO;
+        self.filterButton.enabled=NO;
+        
+    }
+    else{
 
-    UIImage *selectedImage = [displayImages objectAtIndex:self.photoCarousel.currentItemIndex];
-    UIImageWriteToSavedPhotosAlbum(selectedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+         UIImage *selectedImage = [displayImages objectAtIndex:self.photoCarousel.currentItemIndex];
+         UIImageWriteToSavedPhotosAlbum(selectedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }
 }
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {

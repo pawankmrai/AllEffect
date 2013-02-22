@@ -36,7 +36,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="E9s-cw-jWt"/>
-                                    <barButtonItem title="Filter" id="oyq-ee-iI8">
+                                    <barButtonItem enabled="NO" title="Filter" id="oyq-ee-iI8">
                                         <connections>
                                             <action selector="applyImageFilter:" destination="2" id="OpN-nf-yuh"/>
                                         </connections>
@@ -85,14 +85,82 @@
                                     <barButtonItem systemItem="flexibleSpace" id="L8E-AN-Zpu"/>
                                 </items>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="white" id="acj-fJ-Jll">
+                                <rect key="frame" x="0.0" y="315" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="yg4-IQ-pba" customClass="GPUImageView">
+                                        <rect key="frame" x="7" y="5" width="100" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3nW-jL-8yr"/>
+                    <connections>
+                        <outlet property="favScrollView" destination="acj-fJ-Jll" id="iZk-7J-Owk"/>
+                        <segue destination="GPb-tT-ALF" kind="modal" identifier="loadFilterOptions" id="VHB-oc-EM2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef2-cT-cHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1574" y="-223"/>
+        </scene>
+        <!--Filter Collection View Controller-->
+        <scene sceneID="qgM-KU-itH">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="GPb-tT-ALF" customClass="AEFilterCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="JnX-x8-VSc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="REI-Qz-YNf">
+                            <size key="itemSize" width="123" height="147"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="M84-EE-hsm" customClass="AEFilterCollectionCell">
+                                <rect key="frame" x="0.0" y="0.0" width="123" height="147"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="123" height="147"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Filter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pkm-w6-fi7">
+                                            <rect key="frame" x="0.0" y="124" width="123" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" id="u7w-CE-1sB" customClass="GPUImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="147"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="filterName" destination="Pkm-w6-fi7" id="aql-1S-fqJ"/>
+                                    <outlet property="filterView" destination="u7w-CE-1sB" id="ZWR-yo-XrM"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="GPb-tT-ALF" id="0AN-RW-Oxe"/>
+                            <outlet property="delegate" destination="GPb-tT-ALF" id="d8y-2b-Izg"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGe-lQ-2nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="-223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cbn-Zc-Zlr">
