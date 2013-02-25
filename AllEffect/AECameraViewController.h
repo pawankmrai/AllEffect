@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @protocol AECameraViewControllerDelegate
 - (void)didSelectStillImage:(NSData *)image withError:(NSError *)error;
 @end
 
 @interface AECameraViewController : UIViewController
 
-@property(weak, nonatomic) id delegate;
+@property(strong, nonatomic) id delegate;
 @end

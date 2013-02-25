@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060EEF7016D904260010EA85 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 060EEF6F16D904260010EA85 /* iCarousel.m */; };
 		0691BD1716D69C8A00F7523E /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0691BD1416D69C5800F7523E /* libGPUImage.a */; };
-		06945E8216D6412B003E13AA /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8116D6412B003E13AA /* iCarousel.m */; };
 		06945E8916D64305003E13AA /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8416D64305003E13AA /* UIImage+Alpha.m */; };
 		06945E8A16D64305003E13AA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8616D64305003E13AA /* UIImage+Resize.m */; };
 		06945E8B16D64305003E13AA /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 06945E8816D64305003E13AA /* UIImage+RoundedCorner.m */; };
@@ -16,7 +16,6 @@
 		069CFB8C16D73DAA004FC3A2 /* AEFilterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069CFB8B16D73DAA004FC3A2 /* AEFilterCollectionViewController.m */; };
 		069CFB9016D73E4D004FC3A2 /* AEFilterCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 069CFB8F16D73E4D004FC3A2 /* AEFilterCollectionCell.m */; };
 		069CFB9416D745C6004FC3A2 /* AEDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 069CFB9316D745C6004FC3A2 /* AEDataClass.m */; };
-		069CFB9D16D793E0004FC3A2 /* AECustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069CFB9C16D793E0004FC3A2 /* AECustomView.m */; };
 		069FC14C16D1F4E9007B34CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC14B16D1F4E9007B34CE /* UIKit.framework */; };
 		069FC14E16D1F4E9007B34CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC14D16D1F4E9007B34CE /* Foundation.framework */; };
 		069FC15016D1F4E9007B34CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069FC14F16D1F4E9007B34CE /* CoreGraphics.framework */; };
@@ -55,9 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060EEF6E16D904260010EA85 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		060EEF6F16D904260010EA85 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		0691BD0D16D69C5800F7523E /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
-		06945E8016D6412B003E13AA /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
-		06945E8116D6412B003E13AA /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		06945E8316D64305003E13AA /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		06945E8416D64305003E13AA /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		06945E8516D64305003E13AA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
@@ -72,8 +71,6 @@
 		069CFB8F16D73E4D004FC3A2 /* AEFilterCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEFilterCollectionCell.m; sourceTree = "<group>"; };
 		069CFB9216D745C6004FC3A2 /* AEDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AEDataClass.h; sourceTree = "<group>"; };
 		069CFB9316D745C6004FC3A2 /* AEDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AEDataClass.m; sourceTree = "<group>"; };
-		069CFB9B16D793E0004FC3A2 /* AECustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AECustomView.h; sourceTree = "<group>"; };
-		069CFB9C16D793E0004FC3A2 /* AECustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AECustomView.m; sourceTree = "<group>"; };
 		069FC14816D1F4E9007B34CE /* AllEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069FC14B16D1F4E9007B34CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		069FC14D16D1F4E9007B34CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +117,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060EEF6C16D903990010EA85 /* Live Camera */ = {
+			isa = PBXGroup;
+			children = (
+				06945E8D16D64916003E13AA /* AECameraViewController.h */,
+				06945E8E16D64916003E13AA /* AECameraViewController.m */,
+			);
+			name = "Live Camera";
+			sourceTree = "<group>";
+		};
+		060EEF6D16D903F80010EA85 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				060EEF6E16D904260010EA85 /* iCarousel.h */,
+				060EEF6F16D904260010EA85 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		060EEF7116D9042E0010EA85 /* Image Resize */ = {
+			isa = PBXGroup;
+			children = (
+				06945E8316D64305003E13AA /* UIImage+Alpha.h */,
+				06945E8416D64305003E13AA /* UIImage+Alpha.m */,
+				06945E8516D64305003E13AA /* UIImage+Resize.h */,
+				06945E8616D64305003E13AA /* UIImage+Resize.m */,
+				06945E8716D64305003E13AA /* UIImage+RoundedCorner.h */,
+				06945E8816D64305003E13AA /* UIImage+RoundedCorner.m */,
+			);
+			name = "Image Resize";
+			sourceTree = "<group>";
+		};
+		060EEF7216D9097E0010EA85 /* Collection Controller */ = {
+			isa = PBXGroup;
+			children = (
+				069CFB8A16D73DAA004FC3A2 /* AEFilterCollectionViewController.h */,
+				069CFB8B16D73DAA004FC3A2 /* AEFilterCollectionViewController.m */,
+			);
+			name = "Collection Controller";
+			sourceTree = "<group>";
+		};
 		0691BD0E16D69C5800F7523E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +169,8 @@
 		06945E7F16D64104003E13AA /* Carousel + imageResize */ = {
 			isa = PBXGroup;
 			children = (
-				06945E8316D64305003E13AA /* UIImage+Alpha.h */,
-				06945E8416D64305003E13AA /* UIImage+Alpha.m */,
-				06945E8516D64305003E13AA /* UIImage+Resize.h */,
-				06945E8616D64305003E13AA /* UIImage+Resize.m */,
-				06945E8716D64305003E13AA /* UIImage+RoundedCorner.h */,
-				06945E8816D64305003E13AA /* UIImage+RoundedCorner.m */,
-				06945E8016D6412B003E13AA /* iCarousel.h */,
-				06945E8116D6412B003E13AA /* iCarousel.m */,
+				060EEF7116D9042E0010EA85 /* Image Resize */,
+				060EEF6D16D903F80010EA85 /* iCarousel */,
 			);
 			name = "Carousel + imageResize";
 			sourceTree = "<group>";
@@ -147,10 +178,8 @@
 		06945E8C16D648EF003E13AA /* Still Camera */ = {
 			isa = PBXGroup;
 			children = (
-				069CFB9716D793A7004FC3A2 /* Custom View */,
+				060EEF6C16D903990010EA85 /* Live Camera */,
 				069CFB8916D73D5F004FC3A2 /* Filter Collection */,
-				06945E8D16D64916003E13AA /* AECameraViewController.h */,
-				06945E8E16D64916003E13AA /* AECameraViewController.m */,
 			);
 			name = "Still Camera";
 			sourceTree = "<group>";
@@ -158,10 +187,9 @@
 		069CFB8916D73D5F004FC3A2 /* Filter Collection */ = {
 			isa = PBXGroup;
 			children = (
+				060EEF7216D9097E0010EA85 /* Collection Controller */,
 				069CFB9116D745A0004FC3A2 /* Data Class */,
 				069CFB8D16D73E27004FC3A2 /* Custom Cell */,
-				069CFB8A16D73DAA004FC3A2 /* AEFilterCollectionViewController.h */,
-				069CFB8B16D73DAA004FC3A2 /* AEFilterCollectionViewController.m */,
 			);
 			name = "Filter Collection";
 			sourceTree = "<group>";
@@ -182,15 +210,6 @@
 				069CFB9316D745C6004FC3A2 /* AEDataClass.m */,
 			);
 			name = "Data Class";
-			sourceTree = "<group>";
-		};
-		069CFB9716D793A7004FC3A2 /* Custom View */ = {
-			isa = PBXGroup;
-			children = (
-				069CFB9B16D793E0004FC3A2 /* AECustomView.h */,
-				069CFB9C16D793E0004FC3A2 /* AECustomView.m */,
-			);
-			name = "Custom View";
 			sourceTree = "<group>";
 		};
 		069FC13F16D1F4E9007B34CE = {
@@ -377,7 +396,6 @@
 				069FC15C16D1F4E9007B34CE /* AEAppDelegate.m in Sources */,
 				069FC16B16D1F4E9007B34CE /* AEViewController.m in Sources */,
 				069FC18B16D1FF13007B34CE /* AEEditViewController.m in Sources */,
-				06945E8216D6412B003E13AA /* iCarousel.m in Sources */,
 				06945E8916D64305003E13AA /* UIImage+Alpha.m in Sources */,
 				06945E8A16D64305003E13AA /* UIImage+Resize.m in Sources */,
 				06945E8B16D64305003E13AA /* UIImage+RoundedCorner.m in Sources */,
@@ -385,7 +403,7 @@
 				069CFB8C16D73DAA004FC3A2 /* AEFilterCollectionViewController.m in Sources */,
 				069CFB9016D73E4D004FC3A2 /* AEFilterCollectionCell.m in Sources */,
 				069CFB9416D745C6004FC3A2 /* AEDataClass.m in Sources */,
-				069CFB9D16D793E0004FC3A2 /* AECustomView.m in Sources */,
+				060EEF7016D904260010EA85 /* iCarousel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +464,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,7 +489,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

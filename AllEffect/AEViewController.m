@@ -15,7 +15,7 @@
     UIImage *originalImage;
     NSMutableArray *displayImages;
 }
-@property(nonatomic, weak) IBOutlet iCarousel *photoCarousel;
+@property(nonatomic, strong) IBOutlet iCarousel *photoCarousel;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *filterButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property(strong, nonatomic)  UIPopoverController *popController;

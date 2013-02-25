@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "GPUImage.h"
 
 @interface AEFilterCollectionCell : UICollectionViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *filterName;
+@property (strong, nonatomic) IBOutlet UILabel *filterLabel;
 @property (strong, nonatomic) IBOutlet GPUImageView *filterView;
 @end

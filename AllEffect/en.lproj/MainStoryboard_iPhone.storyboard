@@ -30,6 +30,7 @@
                                             <action selector="photoFromAlbum:" destination="2" id="8vb-Qi-7fT"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="P9S-Xa-67Z"/>
                                     <barButtonItem systemItem="camera" id="gu4-DW-BrG">
                                         <connections>
                                             <segue destination="Jyl-EW-ZSI" kind="push" identifier="pushAECamera" id="hUK-tu-3zK"/>
@@ -83,28 +84,18 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="L8E-AN-Zpu"/>
+                                    <barButtonItem title="Filter" id="Kqe-Ur-Bx7">
+                                        <connections>
+                                            <segue destination="wtH-2v-o59" kind="modal" identifier="filterCollection" id="FNM-AZ-xSa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="Su7-DO-Dr4"/>
                                 </items>
                             </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="white" id="acj-fJ-Jll">
-                                <rect key="frame" x="0.0" y="315" width="320" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="yg4-IQ-pba" customClass="GPUImageView">
-                                        <rect key="frame" x="7" y="5" width="100" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3nW-jL-8yr"/>
-                    <connections>
-                        <outlet property="favScrollView" destination="acj-fJ-Jll" id="iZk-7J-Owk"/>
-                        <segue destination="GPb-tT-ALF" kind="modal" identifier="loadFilterOptions" id="VHB-oc-EM2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ef2-cT-cHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +106,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="GPb-tT-ALF" customClass="AEFilterCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="JnX-x8-VSc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="REI-Qz-YNf">
                             <size key="itemSize" width="123" height="147"/>
@@ -131,23 +122,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="123" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleAspectFill" id="u7w-CE-1sB" customClass="GPUImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="147"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Filter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pkm-w6-fi7">
-                                            <rect key="frame" x="0.0" y="124" width="123" height="21"/>
+                                            <rect key="frame" x="0.0" y="126" width="123" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" id="u7w-CE-1sB" customClass="GPUImageView">
-                                            <rect key="frame" x="0.0" y="0.0" width="123" height="147"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="filterName" destination="Pkm-w6-fi7" id="aql-1S-fqJ"/>
+                                    <outlet property="filterLabel" destination="Pkm-w6-fi7" id="ggb-cY-ulG"/>
                                     <outlet property="filterView" destination="u7w-CE-1sB" id="ZWR-yo-XrM"/>
                                 </connections>
                             </collectionViewCell>
@@ -157,10 +148,17 @@
                             <outlet property="delegate" destination="GPb-tT-ALF" id="d8y-2b-Izg"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="aue-jI-JM9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="kBm-Hk-Cd0">
+                            <connections>
+                                <action selector="dismissCollectionView:" destination="GPb-tT-ALF" id="qNB-Pm-9Ls"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGe-lQ-2nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="-223"/>
+            <point key="canvasLocation" x="2474" y="-223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cbn-Zc-Zlr">
@@ -181,7 +179,78 @@
             </objects>
             <point key="canvasLocation" x="427" y="6"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7a5-8Z-CxQ">
+            <objects>
+                <navigationController id="wtH-2v-o59" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="Hrd-Iy-kzt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GPb-tT-ALF" kind="relationship" relationship="rootViewController" id="5u3-h9-EqP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWG-Mc-bcm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="-223"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="AECameraViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AECameraViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="captureImage:"/>
+            </relationships>
+        </class>
+        <class className="AEFilterCollectionCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AEFilterCollectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="filterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="filterView" candidateClass="GPUImageView"/>
+            </relationships>
+        </class>
+        <class className="AEFilterCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AEFilterCollectionViewController.h"/>
+        </class>
+        <class className="AEViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AEViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="applyImageFilter:"/>
+                <relationship kind="action" name="photoFromAlbum:"/>
+                <relationship kind="action" name="photoFromCamera:"/>
+                <relationship kind="action" name="saveImageToAlbum:"/>
+                <relationship kind="outlet" name="filterButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="photoCarousel" candidateClass="iCarousel"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="GPUImageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GPUImageView.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="iCarousel" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
